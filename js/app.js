@@ -45,6 +45,7 @@ const contentController = {
     h2Elem.classList.add(`text__title`);
     let imgElem = document.createElement(`img`);
     imgElem.setAttribute(`src`, this.articles[articleIndex].imgSrc);
+    imgElem.setAttribute(`alt`, this.articles[articleIndex].title);
     imgElem.classList.add(`text__img`);
     let sectionElem = document.createElement(`section`);
     sectionElem.textContent = this.articles[articleIndex].textContent;
