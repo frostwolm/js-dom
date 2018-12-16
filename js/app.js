@@ -33,7 +33,7 @@ const contentController = {
       navElem.appendChild(navItem);
     }
     navElem.addEventListener(`click`, function (evt) {
-      if (!(evt.target.tag === `BUTTON`)) {
+      if (!(evt.target.tagName === `BUTTON`)) {
         return;
       }
       contentController.showContent(contentElem, +evt.target.id.split(`#`)[1]);
