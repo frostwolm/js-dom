@@ -18,9 +18,9 @@ const articles = [
 ];
 
 const contentController = {
-  init(navElem, articlesArr) {
-    if (!navElem || !articlesArr) {
-      console.error(`Не определен элемент навигации или массив статей`);
+  init(navElem, contentElem, articlesArr = articles) {
+    if (!navElem || !articlesArr || !contentElem) {
+      console.error(`Не определен элемент навигации или элемент контента`);
       return null;
     }
     this.articles = articlesArr;
@@ -32,6 +32,12 @@ const contentController = {
       navItem.setAttribute(`id`, `art#${i}`);
       navElem.appendChild(navItem);
     }
+    navElem.addEventListener(`click`, function (evt) {
+      if (!(evt.target.tag === `BUTTON`)) {
+        return;
+      }
+      contentController.showContent(contentElem, +evt.target.id.split(`#`)[1]);
+    });
     return navElem;
   },
   showContent(contentElem, articleIndex) {
@@ -57,6 +63,4 @@ const contentController = {
   }
 };
 
-document.addEventListener(`DOMContentLoaded`, function () {
-  contentController.init(document.querySelector(`nav.menu`), articles);
-});
+document.contentController = contentController;
