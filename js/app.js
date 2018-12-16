@@ -41,7 +41,7 @@ const contentController = {
     return navElem;
   },
   showContent(contentElem, articleIndex) {
-    if (!contentElem || !(articleIndex === undefined)) {
+    if (!contentElem || articleIndex === undefined) {
       console.error(`Не определен элемент контента или индекс статьи в массиве`);
       return null;
     }
