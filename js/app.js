@@ -23,18 +23,35 @@ const contentController = {
       console.error(`Не определен элемент навигации или массив статей`);
       return null;
     }
+    this.articles = articlesArr;
     navElem.innerHTML = ``;
     for (let i = 0; i < articlesArr.length; i++) {
       let navItem = document.createElement(`button`);
       navItem.classList.add(`menu__item`);
-      navItem.textContent = articlesArr[i].title;
+      navItem.textContent = this.articles[i].title;
+      navItem.setAttribute(`id`, `art#${i}`);
       navElem.appendChild(navItem);
     }
     return navElem;
   },
-  // TODO: create nav function
-  // TODO: showcontent function
-  // TODO: hidecontent function
+  showContent(contentElem, articleIndex) {
+    if (!contentElem || !(articleIndex === undefined)) {
+      console.error(`Не определен элемент контента или индекс статьи в массиве`);
+      return null;
+    }
+    contentElem.innerHTML = ``;
+    let h2Elem = document.createElement(`h2`);
+    h2Elem.textContent = this.articles[articleIndex].title;
+    h2Elem.classList.add(`text__title`);
+    let imgElem = document.createElement(`img`);
+    imgElem.setAttribute(`src`, this.articles[articleIndex].imgSrc);
+    imgElem.classList.add(`text__img`);
+    let sectionElem = document.createElement(`section`);
+    sectionElem.textContent = this.articles[articleIndex].textContent;
+    sectionElem.classList.add(`text__content`);
+  }
 };
 
-document.addEventListener("DOMContentLoaded", contentController.init);
+document.addEventListener(`DOMContentLoaded`, function () {
+  contentController.init(document.querySelector(`nav.menu`), articles);
+});
