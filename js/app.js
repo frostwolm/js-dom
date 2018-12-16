@@ -49,6 +49,10 @@ const contentController = {
     let sectionElem = document.createElement(`section`);
     sectionElem.textContent = this.articles[articleIndex].textContent;
     sectionElem.classList.add(`text__content`);
+    contentElem.appendChild(h2Elem);
+    contentElem.appendChild(imgElem);
+    contentElem.appendChild(sectionElem);
+    return contentElem;
   }
 };
 
