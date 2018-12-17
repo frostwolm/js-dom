@@ -28,6 +28,10 @@ img{
   flex-direction: column;
 }
 
+.menu__list{
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   .container {
     max-width: 320px;
