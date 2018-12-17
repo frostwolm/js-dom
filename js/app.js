@@ -25,13 +25,18 @@ const contentController = {
     }
     this.articles = articlesArr;
     navElem.innerHTML = ``;
+    let ulElem = document.createElement(`ul`);
+    ulElem.classList.add(`menu__list`);
     for (let i = 0; i < articlesArr.length; i++) {
+      let liElem = document.createElement(`li`);
+      ulElem.appendChild(liElem);
       let navItem = document.createElement(`button`);
       navItem.classList.add(`menu__item`);
       navItem.textContent = this.articles[i].title;
       navItem.setAttribute(`id`, `art#${i}`);
-      navElem.appendChild(navItem);
+      liElem.appendChild(navItem);
     }
+    navElem.appendChild(ulElem);
     navElem.addEventListener(`click`, function (evt) {
       if (!(evt.target.tagName === `BUTTON`)) {
         return;
