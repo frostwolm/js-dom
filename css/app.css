@@ -8,13 +8,28 @@ html {
   box-sizing: inherit;
 }
 
-.img{
+body {
+  background-color: #F1E3A7;
+}
+
+img{
   width: 100%;
   height: auto;
+}
+
+.container{
+  background-color: #B18F6A;
+  margin: 0 auto;
 }
 
 .menu{
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 320px;
+  }
 }
