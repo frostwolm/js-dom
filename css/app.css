@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 *,
@@ -11,6 +12,7 @@ html {
 body {
   background-color: #F1E3A7;
   margin: 0;
+  height: 100%
 }
 
 img{
@@ -23,6 +25,7 @@ img{
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .menu{
@@ -52,13 +55,17 @@ img{
   text-transform: uppercase;
 }
 
+.site-title{
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 500px) {
   .container {
     max-width: 320px;
   }
 }
 
-@media screen and (min-width: 501px) {
+@media screen and (min-width: 501px and max-width: 999px) {
   .container {
     max-width: 100%;
   }
@@ -66,5 +73,11 @@ img{
   .menu__list{
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .container{
+    flex-direction: row;
   }
 }
