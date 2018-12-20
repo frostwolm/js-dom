@@ -31,7 +31,9 @@ img{
 }
 
 .menu__list{
-
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 600px) {
