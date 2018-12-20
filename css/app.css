@@ -57,8 +57,7 @@ img{
 }
 
 .active{
-  border-bottom: 5px;
-  border-color: blue;
+  background-color: red;
 }
 
 .text{
