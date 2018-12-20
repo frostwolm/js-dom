@@ -56,17 +56,23 @@ img{
   text-transform: uppercase;
 }
 
+.active{
+  border-bottom: 5px;
+  border-color: blue;
+}
+
 .text{
   padding: 20px 30px;
+}
+
+.text__title{
+  text-decoration: underline;
+  font-size: 1.5em;
 }
 
 .text__img{
   max-width: 40vw;
   padding: 0 10px;
-}
-
-main{
-
 }
 
 @media screen and (max-width: 500px) {
