@@ -42,9 +42,12 @@ img{
 
 .menu__item{
   margin: 10px;
-  min-width: 100px;
+  min-width: 200px;
+  min-height: 50px;
   background-color: green;
   border: 0;
+  font-size: 2em;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 600px) {
