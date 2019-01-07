@@ -21,6 +21,10 @@ const articles = [
   }
 ];
 
+document.addEventListener(`DOMContentLoaded`, function () {
+  contentController.init(document.querySelector(`nav.menu`), document.querySelector(`article.text`));
+});
+
 const contentController = {
   init(navElem, contentElem, articlesArr = articles) {
     if (!navElem || !articlesArr || !contentElem) {
