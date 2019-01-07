@@ -71,7 +71,7 @@ const contentController = {
     imgElem.setAttribute(`src`, article.imgSrc);
     imgElem.setAttribute(`alt`, article.title);
     imgElem.classList.add(`text__img`);
-    let sectionElem = document.createElement(`section`);
+    let sectionElem = document.createElement(`div`);
     sectionElem.textContent = article.textContent;
     sectionElem.classList.add(`text__content`);
     contentElem.appendChild(h2Elem);
