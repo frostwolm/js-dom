@@ -75,12 +75,15 @@ const contentController = {
     imgElem.setAttribute(`src`, article.imgSrc);
     imgElem.setAttribute(`alt`, article.title);
     imgElem.classList.add(`text__img`);
-    let sectionElem = document.createElement(`div`);
-    sectionElem.textContent = article.textContent;
-    sectionElem.classList.add(`text__content`);
+    let textContentElem = document.createElement(`div`);
+    textContentElem.textContent = article.textContent;
+    textContentElem.classList.add(`text__content`);
+    let clearFixElem = document.createElement(`div`);
+    clearFixElem.classList.add(`clear`);
     contentElem.appendChild(h2Elem);
     contentElem.appendChild(imgElem);
-    contentElem.appendChild(sectionElem);
+    contentElem.appendChild(textContentElem);
+    contentElem.appendChild(clearFixElem);
     return contentElem;
   }
 };
